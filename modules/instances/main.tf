@@ -41,11 +41,11 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv6" {
 ###############################################################################################################
 
 resource "aws_security_group" "instance_sg" {
-  name        = "instance_sg"
+  name        = "${var.instance_type}-sg"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
   tags = {
-    Name = "instance_sg"
+    Name = "${var.instance_type}-sg"
   }
 }
 
